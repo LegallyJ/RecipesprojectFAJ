@@ -50,8 +50,8 @@ def api_example():
 def get_recipes(input_ingredient_name):
 	load_dotenv();
 	api_key = os.getenv("RECIPES_API_KEY")
-	
-	endpoint = 'https://api.spoonacular.com/recipes/findByIngredients'
+
+	endpoint = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/'
 	payload = {"apikey": api_key, "s":input_ingredient_name}
 	response = requests.get(endpoint, params=payload)
 
@@ -64,4 +64,3 @@ def get_recipes(input_ingredient_name):
 	return json_data["Search"]
 
 app.run(debug=True)
-
